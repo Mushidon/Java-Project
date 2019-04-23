@@ -37,7 +37,19 @@ public class AppProjeto implements AppProjetoIF {
 	
 	}
 	
+	public String getMatriculaMenor (VeiculoAutonomo veiculo, double peso) throws SQLException, Exception {
+		veiculo = this.calculateMenorCusto(veiculo.getOrigem(), peso);
+				return veiculo.getMatricula();
+	}
+	
+	public double getMenorCapacidade (VeiculoAutonomo veiculo, double peso) throws SQLException, Exception {
+		veiculo = this.calculateMenorCusto(veiculo.getOrigem(), peso);
+				return veiculo.getCapacidade();
+	}
+	
+	
     public void atualizarCoordenadas (Coordenadas pontoDest, String matricula) throws Exception {
     	this.autonomoDAO.updateCoordenadas(pontoDest.getLatitude(), pontoDest.getLongitude(), matricula);
     }
+    
 }

@@ -1,9 +1,9 @@
 package br.edu.ifba.ads.trab.persistencia;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
-import br.edu.ifba.ads.trab.entidades.Coordenadas;
+
+
 import br.edu.ifba.ads.trab.entidades.VeiculoAutonomo;
 
 	public interface AutonomoDAO {

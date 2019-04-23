@@ -21,7 +21,6 @@ public class AutonomoSQLDAO implements AutonomoDAO {
 			private static final String BUSCAR = "SELECT* FROM AUTONOMOS";
 			private static final String	UPDATE_LATITUDE = "UPDATE AUTONOMOS SET latitude = ? WHERE matricula = ? ";
 			private static final String UPDATE_LONGITUDE = "UPDATE AUTONOMOS SET longitude = ? WHERE matricula = ? ";
-			private static final String SELECT_BY_MATRICULA ="SELECT* FROM AUTONOMOS WHERE matricula = ?";
 			private static final String BUSCAR_BY_CAPACIDADE = "SELECT* FROM AUTONOMOS WHERE capacidade >= ?";
 			
 			public AutonomoSQLDAO() throws SQLException, ClassNotFoundException {
@@ -77,7 +76,7 @@ public class AutonomoSQLDAO implements AutonomoDAO {
 				while( rSet.next() ) {
 					
 					String matricula = rSet.getString("matricula");
-					int capacidade = rSet.getInt("capacidade");
+					double capacidade = rSet.getDouble("capacidade");
 					int latitude = rSet.getInt("latitude");
 					int longitude = rSet.getInt("longitude");
 					int id = rSet.getInt("id");

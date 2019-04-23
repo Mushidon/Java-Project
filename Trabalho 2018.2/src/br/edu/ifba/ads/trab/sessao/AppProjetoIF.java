@@ -1,6 +1,6 @@
 package br.edu.ifba.ads.trab.sessao;
 
-import java.util.Collection;
+
 import br.edu.ifba.ads.trab.entidades.Coordenadas;
 import br.edu.ifba.ads.trab.entidades.VeiculoAutonomo;
 

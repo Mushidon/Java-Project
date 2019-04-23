@@ -12,9 +12,8 @@ public abstract class VeiculoAutonomo {
 	        this.origem = orig;
 	    }
 	    
-	    protected abstract int calculateDistance(Coordenadas pontoDest);
+	    protected abstract double calculateDistance(Coordenadas pontoDest);
 	    public abstract double calculateCusto(Coordenadas pontoDest, double peso);
-
 	    public String getMatricula() {
 	        return matricula;
 	    }

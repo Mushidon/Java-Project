@@ -3,27 +3,27 @@ package br.edu.ifba.ads.trab.entidades;
 public class Drone extends VeiculoAutonomo {
 	   private static final double fixo = 40;
 	   
-	   public Drone(String matricula, int capacidade, Coordenadas orig) {
+	   public Drone(String matricula, double capacidade, Coordenadas orig) {
 
 	        super(matricula, capacidade, orig);
 
 	    }
 
-	    protected int calculateDistance(Coordenadas pontoDest) {
+	    protected double calculateDistance(Coordenadas pontoDest) {
 	        
-	    	return (int)pontoDest.calculateDistanciaEuclidiana(pontoDest);
+	    	return pontoDest.calculateDistanciaEuclidiana(this.getOrigem());
 	    }
 
 	    public double calculateCusto(Coordenadas pontoDest, double peso) {
 	        double distancia = calculateDistance(pontoDest);
-	        double custo = (1.25 * peso ) * distancia;
+	        double custo =  distancia * (1.25) * (peso);
 
-	        if (custo < fixo) {
-	            return fixo;
-	        } else {
-	            return custo;
-	        }
+	        if (custo < fixo) 
+	           return fixo;
+	       
+	        return custo;
 	    }
+	    
 
 	}
 
