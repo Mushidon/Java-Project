@@ -1,4 +1,5 @@
 package br.edu.ifba.ads.trab.persistencia;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
