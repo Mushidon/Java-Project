@@ -37,14 +37,14 @@ public class AppProjeto implements AppProjetoIF {
 	
 	}
 	
-	public String getMatriculaMenor (VeiculoAutonomo veiculo, double peso) throws SQLException, Exception {
-		veiculo = this.calculateMenorCusto(veiculo.getOrigem(), peso);
+	public String getMatriculaMenor (Coordenadas pontoDest, double peso) throws SQLException, Exception {
+		VeiculoAutonomo veiculo = this.calculateMenorCusto(pontoDest, peso);
 				return veiculo.getMatricula();
 	}
 	
-	public double getMenorCapacidade (VeiculoAutonomo veiculo, double peso) throws SQLException, Exception {
-		veiculo = this.calculateMenorCusto(veiculo.getOrigem(), peso);
-				return veiculo.getCapacidade();
+	public double getMenorCusto (Coordenadas pontoDest, double peso) throws SQLException, Exception {
+		VeiculoAutonomo veiculo = this.calculateMenorCusto(pontoDest, peso);
+				return veiculo.calculateCusto(pontoDest, peso);
 	}
 	
 	
