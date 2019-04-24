@@ -16,6 +16,10 @@ import br.edu.ifba.ads.trab.entidades.VeiculoAutonomo;
 
 public class Frame2 extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -60,7 +64,7 @@ public class Frame2 extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("New label2");
 		lblNewLabel_1.setBounds(139, 65, 185, 14);
 		contentPane.add(lblNewLabel_1);
-		lblNewLabel_1.setText(""+autonomo.calculateCusto(cord, cap));
+		lblNewLabel_1.setText(""+(int)autonomo.calculateCusto(cord, cap));
 		
 
 		

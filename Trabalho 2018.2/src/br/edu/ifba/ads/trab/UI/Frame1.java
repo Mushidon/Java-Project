@@ -20,6 +20,10 @@ import javax.swing.JButton;
 
 public class Frame1 extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;

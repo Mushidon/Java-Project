@@ -18,6 +18,11 @@ import javax.swing.JButton;
 
 public class Frame3 extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private JPanel contentPane;
 
 	/**
