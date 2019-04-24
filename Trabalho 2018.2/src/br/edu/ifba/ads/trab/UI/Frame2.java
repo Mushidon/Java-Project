@@ -64,7 +64,7 @@ public class Frame2 extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("New label2");
 		lblNewLabel_1.setBounds(139, 65, 185, 14);
 		contentPane.add(lblNewLabel_1);
-		lblNewLabel_1.setText(""+(int)autonomo.calculateCusto(cord, cap));
+		lblNewLabel_1.setText(""+String.format("%.2f",autonomo.calculateCusto(cord, cap)));
 		
 
 		
