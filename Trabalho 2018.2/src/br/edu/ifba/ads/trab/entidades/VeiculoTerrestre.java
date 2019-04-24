@@ -11,7 +11,7 @@ public class VeiculoTerrestre extends VeiculoAutonomo {
 
     protected double calculateDistance(Coordenadas pontoDest) {
 
-        double distancia = pontoDest.calculateDistanciaManhattan(this.getOrigem());
+        double distancia = this.getOrigem().calculateDistanciaManhattan(pontoDest);
 
         return distancia;
 

@@ -13,6 +13,22 @@ import br.edu.ifba.ads.trab.entidades.Drone;
 
 public class AutonomoSQLDAO implements AutonomoDAO {
 			
+	/*
+	 
+			SQL DAS TABELAS
+				  	
+					create table AUTONOMOS (	
+					
+							matricula VARCHAR(50),		
+							capacidade double,
+							latitude int,
+							longitude int,
+							ID int
+						
+					);
+	 
+	 */
+			
 			private static final String DRIVER_NAME = "org.hsqldb.jdbcDriver";
 			private static final String DB_URI = "jdbc:hsqldb:hsql://localhost/";
 			private static final String DB_USER = "SA";
@@ -41,10 +57,10 @@ public class AutonomoSQLDAO implements AutonomoDAO {
 				stmt.setInt(3, veiculo.getOrigem().getLatitude());
 				stmt.setInt(4, veiculo.getOrigem().getLongitude());
 					if(veiculo instanceof VeiculoTerrestre) {
-				stmt.setInt(5, 0);
+							stmt.setInt(5, 0);
 					}
 					else {
-					stmt.setInt(5, 1);
+						stmt.setInt(5, 1);
 					}
 				
 				stmt.execute();

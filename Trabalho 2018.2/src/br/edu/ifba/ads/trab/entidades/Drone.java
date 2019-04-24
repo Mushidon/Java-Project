@@ -11,7 +11,7 @@ public class Drone extends VeiculoAutonomo {
 
 	    protected double calculateDistance(Coordenadas pontoDest) {
 	        
-	    	return pontoDest.calculateDistanciaEuclidiana(this.getOrigem());
+	    	return this.getOrigem().calculateDistanciaEuclidiana(pontoDest);
 	    }
 
 	    public double calculateCusto(Coordenadas pontoDest, double peso) {
