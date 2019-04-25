@@ -26,6 +26,7 @@ public class Coordenadas {
         this.longitude = longitude;
     }
 
+    //calculo da distância dos veiculos terrestres//
     public double calculateDistanciaManhattan(Coordenadas pontoOrig, Coordenadas pontoDest) {
 
         double numeroAbsX = Math.abs(this.getLatitude() - pontoDest.getLatitude() +  Math.abs(this.getLongitude() - pontoDest.getLongitude()));
@@ -35,7 +36,8 @@ public class Coordenadas {
         return numeroAbsX + numeroAbsY;
 
     }
-
+    
+    //calculo da distância dos veiculos aereos//
     public double calculateDistanciaEuclidiana(Coordenadas pontoOrig, Coordenadas pontoDest) {
 
         double potenciaX = Math.pow(this.getLatitude() - pontoDest.getLatitude(), 2) + Math.pow(this.getLongitude() - pontoDest.getLongitude(), 2);

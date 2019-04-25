@@ -19,7 +19,8 @@ public class AppProjeto implements AppProjetoIF {
 		this.autonomoDAO = new AutonomoSQLDAO();
 	}
 
-    
+    //Retorna o veiculo que possuo o menor custo dentre os veiculos da lista// 
+	
 	public VeiculoAutonomo calculateMenorCusto (Coordenadas pontoOrig, Coordenadas pontoDest,  double peso) throws SQLException, Exception {
 	
 	ArrayList<VeiculoAutonomo> veiculos = new ArrayList<VeiculoAutonomo>();
@@ -37,16 +38,21 @@ public class AppProjeto implements AppProjetoIF {
 	
 	}
 	
+	//Retorna a matricula do veiculo com o menor custo dentre os veiculos da lista//
+	
 	public String getMatriculaMenor (Coordenadas pontoOrig, Coordenadas pontoDest, double peso) throws SQLException, Exception {
 		VeiculoAutonomo veiculo = this.calculateMenorCusto(pontoOrig, pontoDest, peso);
 				return veiculo.getMatricula();
 	}
+	
+	//Retorna o custo do veiculo com o menor custo dentre os veiculos da lista//
 	
 	public double getMenorCusto (Coordenadas pontoOrig,Coordenadas pontoDest, double peso) throws SQLException, Exception {
 		VeiculoAutonomo veiculo = this.calculateMenorCusto(pontoOrig,pontoDest, peso);
 				return veiculo.calculateCusto(pontoOrig,pontoDest, peso);
 	}
 	
+	//Atualiza as coordenadas do veiculo cuja a matricula foi passada no banco de dados//
 	
     public void atualizarCoordenadas (Coordenadas pontoDest, String matricula) throws Exception {
     	this.autonomoDAO.updateCoordenadas(pontoDest.getLatitude(), pontoDest.getLongitude(), matricula);

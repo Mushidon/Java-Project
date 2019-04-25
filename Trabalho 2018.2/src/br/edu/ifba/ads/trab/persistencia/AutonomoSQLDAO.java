@@ -49,7 +49,8 @@ public class AutonomoSQLDAO implements AutonomoDAO {
 			};
 			
 			
-		
+		//Inserção de elementos na tabela// 
+			
 			public void inserir(VeiculoAutonomo veiculo) throws Exception {
 				PreparedStatement stmt = this.getConnection().prepareStatement(AutonomoSQLDAO.INSERIR);
 				stmt.setString(1, veiculo.getMatricula());
@@ -67,6 +68,7 @@ public class AutonomoSQLDAO implements AutonomoDAO {
 				stmt.close();
 			};
 		
+			//Retorna tudo da tabela e printa seus atributos// 
 			
 		   public VeiculoAutonomo buscar() throws Exception {
 				PreparedStatement stmt = this.getConnection().prepareStatement(AutonomoSQLDAO.BUSCAR);
@@ -78,6 +80,7 @@ public class AutonomoSQLDAO implements AutonomoDAO {
 				return null;
 			};
 		
+		//Metodo que retorna a lista de objetos que possuam o peso >= ao peso dado como parametro// 	
 			
 			public ArrayList<VeiculoAutonomo> findVeiculosByPeso (double peso) throws SQLException {
 				
@@ -108,6 +111,8 @@ public class AutonomoSQLDAO implements AutonomoDAO {
 			return veiculos;	
 		    };
 			
+		    //Metodo que faz o update nas coordenadas baseado na matricula do veiculo//
+		    
 			public void updateCoordenadas (int latitude,int longitude, String matricula) throws SQLException {
 			
 				PreparedStatement stmt = this.getConnection().prepareStatement(AutonomoSQLDAO.UPDATE_LATITUDE);

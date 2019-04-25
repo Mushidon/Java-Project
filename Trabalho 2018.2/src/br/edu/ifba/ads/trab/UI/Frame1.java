@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class Frame1 extends JFrame {
-
+  
 	/**
 	 * 
 	 */
