@@ -29,11 +29,12 @@ public class Frame2 extends JFrame {
 	/**
 	 * Create the frame.
 	 * @param cord 
+	 * @param cordDest 
 	 * @param cap 
 	 */
 	
 	
-	public Frame2(VeiculoAutonomo autonomo, Coordenadas cord, double cap) {
+	public Frame2(VeiculoAutonomo autonomo, Coordenadas cordOrig, Coordenadas cordDest, double cap) {
 		
 		setTitle("Sistema");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,7 +65,7 @@ public class Frame2 extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("New label2");
 		lblNewLabel_1.setBounds(139, 65, 185, 14);
 		contentPane.add(lblNewLabel_1);
-		lblNewLabel_1.setText(""+String.format("%.2f",autonomo.calculateCusto(cord, cap)));
+		lblNewLabel_1.setText(""+String.format("%.2f",autonomo.calculateCusto(cordOrig,cordDest, cap)));
 		
 
 		
@@ -73,7 +74,7 @@ public class Frame2 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				Frame3 janela3 = new Frame3(autonomo,cord);
+				Frame3 janela3 = new Frame3(autonomo,cordDest);
 				janela3.setVisible(true);
 				
 	

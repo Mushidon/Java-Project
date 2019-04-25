@@ -30,9 +30,13 @@ public class Frame1 extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private String str;
+	private String str2;
 	private String str3;
 	private String str4;
 	private String str5;
+	private int lat;
+	private int long1;
 	private int lat2;
 	private int long2;
 	private double cap;
@@ -134,12 +138,16 @@ public class Frame1 extends JFrame {
 
 			public void actionPerformed(ActionEvent evt) {
 				
+				str  =   textField.getText(); 
+				str2 =  textField_1.getText(); 
 				str3 = 	textField_2.getText();
 				str4 = 	textField_3.getText();
 				str5 = 	textField_4.getText();
-				cap = Double.parseDouble(str3);
+				cap  =  Double.parseDouble(str3);
+				lat  = 	Integer.parseInt(str);
+				long1  = Integer.parseInt(str2);
 				long2 = Integer.parseInt(str4);
-				lat2 = Integer.parseInt(str5);
+				lat2  = Integer.parseInt(str5);
 				
 				//lat2 = Integer.parseInt(str3);
 				//long2 = Integer.parseInt(str4);
@@ -158,10 +166,11 @@ public class Frame1 extends JFrame {
 			public void buscar(int lat2, int long2, double peso) throws Exception {
 				
 				 AppProjeto projeto = new AppProjeto();
-			     VeiculoAutonomo autonomo = projeto.calculateMenorCusto(new Coordenadas(lat2, long2), peso);
-			     Coordenadas cord = new Coordenadas(lat2,long2);
+				 Coordenadas cordOrig = new Coordenadas (lat,long1);
+				 Coordenadas cordDest = new Coordenadas(lat2,long2);
+				 VeiculoAutonomo autonomo = projeto.calculateMenorCusto(cordOrig,cordDest, peso);
 			    if(autonomo != null) { 
-			     Frame2 janela2 = new Frame2(autonomo,cord,cap);
+			     Frame2 janela2 = new Frame2(autonomo,cordOrig,cordDest,cap);
 			     janela2.setVisible(true);
 			     
 			   }

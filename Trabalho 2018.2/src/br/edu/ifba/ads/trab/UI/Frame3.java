@@ -39,7 +39,7 @@ public class Frame3 extends JFrame {
 	private int long2;
 	private String mat;
 	
-	public Frame3(VeiculoAutonomo autonomo,Coordenadas cord) {
+	public Frame3(VeiculoAutonomo autonomo,Coordenadas cordDest) {
 		
 		
 		setTitle("Sistema");
@@ -71,8 +71,8 @@ public class Frame3 extends JFrame {
 				// TODO Auto-generated method stub
 				try {
 					
-					lat2 = cord.getLatitude();
-					long2 = cord.getLongitude();
+					lat2 = cordDest.getLatitude();
+					long2 = cordDest.getLongitude();
 					mat = autonomo.getMatricula();
 					
                     this.atualizar(new Coordenadas(lat2, long2), mat);

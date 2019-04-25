@@ -20,13 +20,13 @@ public class AppProjeto implements AppProjetoIF {
 	}
 
     
-	public VeiculoAutonomo calculateMenorCusto (Coordenadas pontoDest, double peso) throws SQLException, Exception {
+	public VeiculoAutonomo calculateMenorCusto (Coordenadas pontoOrig, Coordenadas pontoDest,  double peso) throws SQLException, Exception {
 	
 	ArrayList<VeiculoAutonomo> veiculos = new ArrayList<VeiculoAutonomo>();
 	veiculos = this.autonomoDAO.findVeiculosByPeso(peso); 
 	VeiculoAutonomo menor = veiculos.get(0);
 		for(int iCont=0; iCont<veiculos.size(); iCont++) {
-			if(veiculos.get(iCont).calculateCusto(pontoDest, peso) < menor.calculateCusto(pontoDest, peso)) 
+			if(veiculos.get(iCont).calculateCusto(pontoOrig, pontoDest, peso) < menor.calculateCusto(pontoOrig, pontoDest, peso)) 
 					menor = veiculos.get(iCont);
 		}
 	
@@ -37,14 +37,14 @@ public class AppProjeto implements AppProjetoIF {
 	
 	}
 	
-	public String getMatriculaMenor (Coordenadas pontoDest, double peso) throws SQLException, Exception {
-		VeiculoAutonomo veiculo = this.calculateMenorCusto(pontoDest, peso);
+	public String getMatriculaMenor (Coordenadas pontoOrig, Coordenadas pontoDest, double peso) throws SQLException, Exception {
+		VeiculoAutonomo veiculo = this.calculateMenorCusto(pontoOrig, pontoDest, peso);
 				return veiculo.getMatricula();
 	}
 	
-	public double getMenorCusto (Coordenadas pontoDest, double peso) throws SQLException, Exception {
-		VeiculoAutonomo veiculo = this.calculateMenorCusto(pontoDest, peso);
-				return veiculo.calculateCusto(pontoDest, peso);
+	public double getMenorCusto (Coordenadas pontoOrig,Coordenadas pontoDest, double peso) throws SQLException, Exception {
+		VeiculoAutonomo veiculo = this.calculateMenorCusto(pontoOrig,pontoDest, peso);
+				return veiculo.calculateCusto(pontoOrig,pontoDest, peso);
 	}
 	
 	

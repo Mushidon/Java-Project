@@ -9,16 +9,16 @@ public class VeiculoTerrestre extends VeiculoAutonomo {
 
     }
 
-    protected double calculateDistance(Coordenadas pontoDest) {
+    protected double calculateDistance(Coordenadas pontoOrig, Coordenadas pontoDest) {
 
-        double distancia = this.getOrigem().calculateDistanciaManhattan(pontoDest);
+        double distancia = this.getOrigem().calculateDistanciaManhattan(pontoOrig, pontoDest);
 
         return distancia;
 
     }
 
-    public double calculateCusto(Coordenadas pontoDest, double peso) {
-        double distancia = calculateDistance(pontoDest);
+    public double calculateCusto(Coordenadas pontoOrig, Coordenadas pontoDest, double peso) {
+        double distancia = calculateDistance(pontoOrig, pontoDest);
         double custo = distancia * peso;
 
         if (custo < fixo) 

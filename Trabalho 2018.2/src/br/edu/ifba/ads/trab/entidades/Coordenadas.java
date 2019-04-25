@@ -26,19 +26,20 @@ public class Coordenadas {
         this.longitude = longitude;
     }
 
-    public double calculateDistanciaManhattan(Coordenadas pontoDest) {
+    public double calculateDistanciaManhattan(Coordenadas pontoOrig, Coordenadas pontoDest) {
 
-        double numeroAbsX = Math.abs(this.getLatitude() - pontoDest.getLatitude());
-        double numeroAbsY = Math.abs(this.getLongitude() - pontoDest.getLongitude());
-
+        double numeroAbsX = Math.abs(this.getLatitude() - pontoDest.getLatitude() +  Math.abs(this.getLongitude() - pontoDest.getLongitude()));
+        double numeroAbsY = Math.abs( pontoOrig.getLatitude() - pontoDest.getLatitude() + Math.abs(pontoOrig.getLongitude() - pontoDest.getLongitude()));
+       
+        
         return numeroAbsX + numeroAbsY;
 
     }
 
-    public double calculateDistanciaEuclidiana(Coordenadas pontoDest) {
+    public double calculateDistanciaEuclidiana(Coordenadas pontoOrig, Coordenadas pontoDest) {
 
-        double potenciaX = Math.pow(this.getLatitude() - pontoDest.getLatitude(), 2);
-        double potenciaY = Math.pow(this.getLongitude() - pontoDest.getLongitude(), 2);
+        double potenciaX = Math.pow(this.getLatitude() - pontoDest.getLatitude(), 2) + Math.pow(this.getLongitude() - pontoDest.getLongitude(), 2);
+        double potenciaY = Math.pow(pontoOrig.getLatitude()- pontoDest.getLatitude(), 2) + Math.pow(pontoOrig.getLongitude() - pontoDest.getLongitude(), 2);
 
         return Math.sqrt(potenciaX + potenciaY);
 
