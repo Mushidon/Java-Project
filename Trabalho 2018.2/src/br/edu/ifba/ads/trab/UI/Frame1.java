@@ -120,7 +120,7 @@ public class Frame1 extends JFrame {
 		btnBuscar.setBounds(157, 203, 89, 23);
 		contentPane.add(btnBuscar);
 		
-		JLabel lblNewLabel_1 = new JLabel("Capacidade(Kg)");
+		JLabel lblNewLabel_1 = new JLabel("Peso(Kg)");
 		lblNewLabel_1.setBounds(10, 128, 102, 14);
 		contentPane.add(lblNewLabel_1);
 
